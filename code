@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int choice1, choice2, choice4;
+    char names[20];
+    int accountDOB[8];
+    int accountLogin[2] = {0, 0};
+
+    printf("Hello, do you have an existing account?\n1. Yes.\n2. No, Create an account.\n");
+    scanf("%d\n", &choice1);
+
+
+    if(choice1 == 2){// create an account option
+        printf("Please enter your first and last name:\n"); // this line is skipped and then printed after the fgets, but when the first scanf isnt used its not skipped
+        fgets(names, 31, stdin);// gets the string input from the user, max of 30 characters for their name
+        printf("Name is: %s", names);
+
+        printf("enter DOB (form of 01/01/2000)\n");
+        scanf("%s", accountDOB);//takes the Users DOB as a string to store in newAccountDOB
+        printf("DOB is: %s\n", accountDOB);
+
+        printf("Please set a 6 digit User ID:\n");
+        scanf("%d", &accountLogin[0]);//takes the Users chosen ID and PIN as a string to store in newAccountLogin
+
+        printf("Please enter a 4 digit login PIN:\n");
+        scanf("%d", &accountLogin[1]);
+
+        printf("NAME: %s\nD.O.B: %s\nID: %d, PIN: %d.\n", names, accountDOB, accountLogin[0], accountLogin[1]);
+
+
+        printf("You may set up 2 Savings Accounts. What type of Savings Accounts would you like to open?\n1. Stock ISA\n2. Shares ISA\n3. Cash ISA\n4. Regular Savings Account\n");
+        scanf("%d", &choice4);
+        printf("You chose %d\n", choice4);
+
+        printf("Would you like to login now?\n1. Yes\n2. No\n");
+        scanf("%d", choice2);
+        if(choice2 == 1)
+            {
+                printf("Please enter your ID:\n");
+            }
+        else if (choice2 == 2)
+            {
+                exit(0);
+            }
+    }
+    else if(choice1 == 1)
+        {
+            printf("login now");
+        }
+
+
+    return 0;
+}
