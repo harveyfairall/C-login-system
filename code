@@ -4,7 +4,7 @@
 int main()
 {
     int choice1, choice2, choice4;
-    char names[20];
+    char names[30];
     int accountDOB[8];
     int accountLogin[2] = {0, 0};
 
